@@ -14,7 +14,7 @@ export default function Home() {
     setStatus('submitting');
 
     try {
-      const response = await fetch(
+      await fetch(
         'https://script.google.com/macros/s/AKfycbzt0PTC429uY0FdeiLlS5Jw9PS9gbexr49bKrd99B3wp4_Iwg8k6cGTvMKmhTngMBK85A/exec',
         {
           method: 'POST',
@@ -61,7 +61,7 @@ export default function Home() {
           <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl hover:cursor-default`}>Build better habits.</h2>
           <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl hover:cursor-default`}>Grow your character.</h2>
           <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl font-semibold mb-8 hover:cursor-default`}>Get rewarded.</h2>
-          <p className="font-inconsolata text-gray-100 tracking-widest mb-3 hover:cursor-default">It'll pay to be early...</p>
+          <p className="font-inconsolata text-gray-100 tracking-widest mb-3 hover:cursor-default">It&apos;ll pay to be early...</p>
           <form onSubmit={handleSubmit} className="relative h-12">
             <input
               type="email"
