@@ -54,15 +54,15 @@ export default function Home() {
 
       <div className="relative flex h-screen justify-center items-center">
         <div className="flex-grid">
-          <h1 className="text-8xl hollow-text font-bold tracking-tighter mb-8">
+          <h1 className="text-8xl hollow-text font-bold tracking-tighter mb-8 hover:cursor-default">
             PHYT
           </h1>
-          <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl`}>Get in shape.</h2>
-          <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl`}>Build better habits.</h2>
-          <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl`}>Grow your character.</h2>
-          <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl font-semibold mb-8`}>Get rewarded.</h2>
-          <p className="font-inconsolata text-gray-100 tracking-widest mb-2">It'll pay to be early...</p>
-          <form onSubmit={handleSubmit} className="relative h-12 mb-2">
+          <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl hover:cursor-default`}>Get in shape.</h2>
+          <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl hover:cursor-default`}>Build better habits.</h2>
+          <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl hover:cursor-default`}>Grow your character.</h2>
+          <h2 className={`${inconsolata.className} text-phyt_green leading-6 tracking-wider text-xl font-semibold mb-8 hover:cursor-default`}>Get rewarded.</h2>
+          <p className="font-inconsolata text-gray-100 tracking-widest mb-3 hover:cursor-default">It'll pay to be early...</p>
+          <form onSubmit={handleSubmit} className="relative h-12">
             <input
               type="email"
               required
@@ -80,13 +80,13 @@ export default function Home() {
               <CornerDownRight />
             </button>
           </form>
+          <p className="font-inconsolata text-gray-100 tracking-wider hover:cursor-default">Be early.</p>
           {status === 'success' && (
-            <p className="font-inconsolata text-green-500 tracking-wider mb-2">Thanks for signing up!</p>
+            <p className="font-inconsolata text-green-500 tracking-wider mb-2 hover:cursor-default">Thanks for signing up!</p>
           )}
           {status === 'error' && (
-            <p className="font-inconsolata text-red-500 tracking-wider mb-2">Something went wrong. Please try again.</p>
+            <p className="font-inconsolata text-red-500 tracking-wider mb-2 hover:cursor-default">Something went wrong. Please try again.</p>
           )}
-          <p className="font-inconsolata text-gray-100 tracking-wider">Be early.</p>
         </div>
       </div>
     </div>
