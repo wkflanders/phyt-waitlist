@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const flattenColors = require('tailwindcss/src/util/flattenColorPalette')
 
 export default {
   content: [
@@ -11,6 +12,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        phyt_green: "#0DFF00",
+      },
+      fontFamily: {
+        akshar:["Akshar", "sans-serif"],
+        inconsolata:["Inconsolata", "sans-serif"],
       },
     },
   },
