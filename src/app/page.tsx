@@ -130,10 +130,10 @@ export default function Home() {
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Account:</strong> A unique account created for you to access our Service.</li>
               <li>
-                <strong>Affiliate:</strong> An entity that controls, is controlled by, or is under common control with a party. "Control" means ownership of 50% or more of shares, equity interest, or other securities.
+                <strong>Affiliate:</strong> An entity that controls, is controlled by, or is under common control with a party. &quot;Control&quot; means ownership of 50% or more of shares, equity interest, or other securities.
               </li>
               <li>
-                <strong>Company:</strong> CM Labs, referred to as "We," "Us," or "Our," located at 810 Seashore Road, NJ, 08204.
+                <strong>Company:</strong> CM Labs, referred to as &quot;We,&quot; &quot;Us,&quot; or &quot;Our,&quot; located at 810 Seashore Road, NJ, 08204.
               </li>
               <li><strong>Cookies:</strong> Small files placed on your device to track activity and improve your experience.</li>
               <li><strong>Country:</strong> Refers to New Jersey, United States.</li>
@@ -171,7 +171,7 @@ export default function Home() {
 
             <h6 className="text-sm font-semibold mt-2">Usage Data</h6>
             <p>
-              Usage Data is collected automatically and may include details such as your device's IP address, browser type, and the pages you visit.
+              Usage Data is collected automatically and may include details such as your device&apos;s IP address, browser type, and the pages you visit.
             </p>
 
             <h5 className="text-md font-bold mt-2">Tracking Technologies and Cookies</h5>
@@ -211,7 +211,7 @@ export default function Home() {
               <li>Protecting the rights and safety of the Company and users</li>
             </ul>
 
-            <h4 className="text-lg font-semibold mt-4">Children's Privacy</h4>
+            <h4 className="text-lg font-semibold mt-4">Children&apos;s Privacy</h4>
             <p>
               Our Service is not intended for individuals under 13. If we learn that we have collected Personal Data from a child under 13 without parental consent, we will delete it.
             </p>
