@@ -64,8 +64,7 @@ export default function Home() {
           </div>
           <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Run.</h2>
           <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Bet.</h2>
-          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Earn.</h2>
-          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl font-semibold mb-8 hover:cursor-default`}>Get rewarded.</h2>
+          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl font-semibold mb-8 hover:cursor-default`}>Earn.</h2>
           <p className="font-inconsolata text-gray-100 tracking-widest mb-3 hover:cursor-default">It&apos;ll pay to be early...</p>
           <form onSubmit={handleSubmit} className="relative h-12">
             <input
