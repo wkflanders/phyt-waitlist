@@ -62,9 +62,9 @@ export default function Home() {
               className="h-24 w-auto"
             />
           </div>
-          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Get in shape.</h2>
-          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Build better habits.</h2>
-          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Grow your character.</h2>
+          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Run.</h2>
+          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Bet.</h2>
+          <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Earn.</h2>
           <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl font-semibold mb-8 hover:cursor-default`}>Get rewarded.</h2>
           <p className="font-inconsolata text-gray-100 tracking-widest mb-3 hover:cursor-default">It&apos;ll pay to be early...</p>
           <form onSubmit={handleSubmit} className="relative h-12">
@@ -107,7 +107,7 @@ export default function Home() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50">
-          <div className="bg-gray-600 p-6 rounded-lg w-4/5 font-inconsolata max-w-4xl max-h-[80%] overflow-y-auto p-6 text-gray-300">
+          <div className="bg-gray-600 rounded-lg w-4/5 font-inconsolata max-w-4xl max-h-[80%] overflow-y-auto p-6 text-gray-300">
             <h1 className="text-2xl font-semibold mb-4">Privacy and Terms</h1>
             <h4 className="text-xl font-bold mb-4">Last Updated: November 20, 2024</h4>
 
