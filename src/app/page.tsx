@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { CornerDownRight } from 'lucide-react';
 import { inconsolata } from './fonts';
+import Image from "next/image";
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -92,6 +93,14 @@ export default function Home() {
             <p className="font-inconsolata text-red-500 tracking-wider mb-2 hover:cursor-default">Something went wrong. Please try again.</p>
           )}
         </div>
+      </div>
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-row items-center space-x-5 py-2">
+        <a target="_blank" href="https://discord.gg/bdVmWMtrZ8">
+          <Image src="/discord.png" alt="discord" className="invert" width={30} height={30} />
+        </a>
+        <a target="_blank" href="https://x.com/Phytdotfun">
+          <Image src="/x.png" alt="twitter" className="invert" width={23} height={23} />
+        </a>
       </div>
 
       <div className="absolute bottom-4 left-0 right-0 text-center">
