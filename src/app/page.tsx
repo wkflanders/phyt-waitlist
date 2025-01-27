@@ -6,7 +6,7 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { CornerDownRight } from 'lucide-react';
 import { inconsolata } from './fonts';
 import Image from "next/image";
-import PrivacyPolicy from "../../components/PrivacyPolicy";
+import PrivacyPolicy from "../components/PrivacyPolicy";
 
 export default function Home() {
   return (
