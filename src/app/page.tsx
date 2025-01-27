@@ -1,7 +1,6 @@
-// pages/index.tsx
 'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 import { CornerDownRight } from 'lucide-react';
@@ -10,6 +9,14 @@ import Image from "next/image";
 import PrivacyPolicy from "../../components/PrivacyPolicy";
 
 export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  );
+}
+
+function HomeContent() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('');
   const router = useRouter();
@@ -26,13 +33,11 @@ export default function Home() {
     }
   }, [modal]);
 
-  // Function to open the modal and update the URL
   const openModal = () => {
     setIsModalOpen(true);
     router.push(`${pathname}?modal=privacy`);
   };
 
-  // Function to close the modal and remove the query parameter
   const closeModal = () => {
     setIsModalOpen(false);
     const params = new URLSearchParams(searchParams.toString());
@@ -55,12 +60,10 @@ export default function Home() {
           headers: {
             'Content-Type': 'application/json',
           },
-          mode: 'no-cors' // Add this to handle CORS
+          mode: 'no-cors'
         }
       );
 
-      // Since we're using no-cors, we won't get a real response status
-      // Instead, assume success if we get here without an error
       setStatus('success');
       setEmail('');
 
@@ -82,7 +85,6 @@ export default function Home() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Optional dark overlay to make text more readable */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/50" />
 
       <div className="relative flex h-screen justify-center items-center">
@@ -143,7 +145,6 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <PrivacyPolicy isOpen={isModalOpen} onClose={closeModal} />
       )}
