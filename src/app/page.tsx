@@ -1,6 +1,8 @@
+// pages/index.tsx
 'use client';
 
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 import { CornerDownRight } from 'lucide-react';
 import { inconsolata } from './fonts';
@@ -10,7 +12,35 @@ import PrivacyPolicy from "../../components/PrivacyPolicy";
 export default function Home() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const modal = searchParams?.get('modal');
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (modal === 'privacy') {
+      setIsModalOpen(true);
+    } else {
+      setIsModalOpen(false);
+    }
+  }, [modal]);
+
+  // Function to open the modal and update the URL
+  const openModal = () => {
+    setIsModalOpen(true);
+    router.push(`${pathname}?modal=privacy`);
+  };
+
+  // Function to close the modal and remove the query parameter
+  const closeModal = () => {
+    setIsModalOpen(false);
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete('modal');
+    const query = params.toString();
+    const url = query ? `${pathname}?${query}` : pathname;
+    router.push(url);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,17 +126,17 @@ export default function Home() {
         </div>
       </div>
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-row items-center space-x-5 py-2">
-        <a target="_blank" href="https://discord.gg/bdVmWMtrZ8">
+        <a target="_blank" href="https://discord.gg/bdVmWMtrZ8" rel="noopener noreferrer">
           <Image src="/discord.png" alt="discord" className="invert" width={30} height={30} />
         </a>
-        <a target="_blank" href="https://x.com/Phytdotfun">
+        <a target="_blank" href="https://x.com/Phytdotfun" rel="noopener noreferrer">
           <Image src="/x.png" alt="twitter" className="invert" width={23} height={23} />
         </a>
       </div>
 
       <div className="absolute bottom-4 left-0 right-0 text-center">
         <button
-          onClick={() => setIsModalOpen(true)}
+          onClick={openModal}
           className="text-sm text-gray-200 hover:text-phyt_blue font-inconsolata"
         >
           Privacy and Terms
@@ -115,7 +145,7 @@ export default function Home() {
 
       {/* Modal */}
       {isModalOpen && (
-        <PrivacyPolicy isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        <PrivacyPolicy isOpen={isModalOpen} onClose={closeModal} />
       )}
     </div>
   );
