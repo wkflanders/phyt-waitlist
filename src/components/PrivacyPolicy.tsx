@@ -48,7 +48,7 @@ const PrivacyPolicy = ({ isOpen, onClose }: PrivacyPolicyProps) => {
                 tabIndex={-1}
             >
                 <h1 className="text-2xl font-semibold mb-4">Privacy and Terms</h1>
-                <h4 className="text-xl font-bold mb-4">Last Updated: November 20, 2024</h4>
+                <h4 className="text-xl font-bold mb-4">Last Updated: Janurary 27, 2024</h4>
 
                 <p>
                     This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of your information when you use the Service and informs you of your privacy rights and how the law protects you.
