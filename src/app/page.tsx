@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-
-import { CornerDownRight } from 'lucide-react';
 import { inconsolata } from './fonts';
 import Image from "next/image";
 import PrivacyPolicy from "../components/PrivacyPolicy";
@@ -17,8 +15,6 @@ export default function Home() {
 }
 
 function HomeContent() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('');
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -45,32 +41,6 @@ function HomeContent() {
     const query = params.toString();
     const url = query ? `${pathname}?${query}` : pathname;
     router.push(url);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('submitting');
-
-    try {
-      await fetch(
-        'https://script.google.com/macros/s/AKfycbzt0PTC429uY0FdeiLlS5Jw9PS9gbexr49bKrd99B3wp4_Iwg8k6cGTvMKmhTngMBK85A/exec',
-        {
-          method: 'POST',
-          body: JSON.stringify({ email }),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          mode: 'no-cors'
-        }
-      );
-
-      setStatus('success');
-      setEmail('');
-
-    } catch (error) {
-      console.error('Submission error:', error);
-      setStatus('error');
-    }
   };
 
   return (
@@ -100,31 +70,14 @@ function HomeContent() {
           <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl hover:cursor-default`}>Bet.</h2>
           <h2 className={`${inconsolata.className} text-phyt_blue leading-6 tracking-wider text-xl font-semibold mb-8 hover:cursor-default`}>Earn.</h2>
           <p className="font-inconsolata text-gray-100 tracking-widest mb-3 hover:cursor-default">It&apos;ll pay to be early...</p>
-          <form onSubmit={handleSubmit} className="relative h-12">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-gray-200 border-2 border-gray-500 rounded-lg pl-4 pr-12 py-1"
-              placeholder="email"
-              disabled={status === 'submitting'}
-            />
-            <button
-              type="submit"
-              disabled={status === 'submitting'}
-              className="absolute right-0 top-0 text-gray-500 p-1 rounded-lg border-2 border-gray-400 bg-gray-200 disabled:opacity-50"
-            >
-              <CornerDownRight />
-            </button>
-          </form>
-          <p className="font-inconsolata text-gray-100 tracking-wider hover:cursor-default">Be early.</p>
-          {status === 'success' && (
-            <p className="font-inconsolata text-green-500 tracking-wider mb-2 hover:cursor-default">Thanks for signing up!</p>
-          )}
-          {status === 'error' && (
-            <p className="font-inconsolata text-red-500 tracking-wider mb-2 hover:cursor-default">Something went wrong. Please try again.</p>
-          )}
+
+          <p className="font-inconsolata text-gray-100 tracking-wider hover:cursor-default mb-3">Be early.</p>
+
+          <p className="font-inconsolata text-lg text-gray-100 tracking-wider underline hover:cursor-default">
+            <a target="_blank" href="https://mirror.xyz/phyt.eth/j_YGc7CJqjy7rrTHLkI9Zk6oN8Ok4c1W3Kjgyz26YO0">
+              Read the white paper.
+            </a>
+          </p>
         </div>
       </div>
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-row items-center space-x-5 py-2">
